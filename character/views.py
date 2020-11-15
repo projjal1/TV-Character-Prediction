@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from sklearn.externals import joblib
+import pickle
 import numpy as np
 import pandas as pd
 
@@ -12,8 +12,8 @@ def process(arr):
     return res
 
 #Load the model
-joblib_file = "resources/joblib_model.pkl"
-joblib_model = joblib.load(joblib_file)
+pickle_file = "resources/pickle_model.pkl"
+pickle_model = pickle.load(open(pickle_file, 'rb'))
 
 #Load the character file 
 data=pd.read_csv('resources/chars.csv')
@@ -42,7 +42,7 @@ def predictions(request):
     pred=process(values)
     
     #Prediction ID
-    id=joblib_model.predict(pred)[0]
+    id=pickle_model.predict(pred)[0]
 
     #char id
     charid,work,dispnm=details(id)
