@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Your character</title>
+    </head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        h1 {
+            color: blueviolet;
+            margin:0;
+            padding:4px;
+            font:bold 1.5em verdana;
+            border-bottom:1px solid #000;
+	    }
+
+        h2 {
+            color:olive;
+        }
+
+        body {
+        background-color: lightgrey;
+        color: blue;
+        }
+
+        img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 300px;
+        }
+
+        b{color:orangered;}
+
+        p{font-size: large;}
+    </style>
+
+    <body>
+        <div class="container">
+            <br><br><br>
+            <h1>Your result has been processed.</h1>
+            <br>
+            <h2>All data have been taken from <b>openpsychometrics.org</b></h2>
+            <br>
+            <img src={{url}} alt="Character">
+            <br><br>
+            <p>You are <b>{{dispnm}}</b>, from <b>{{work}}</b> fictional work.</p>
+
+            <br>
+            <br>
+            <form action="{% url 'home' %}">
+                <input type="submit" class="btn btn-primary" value="Go Back!">
+            </form>            
+        </div>  
+    </body>
+</html>

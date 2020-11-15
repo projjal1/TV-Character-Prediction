@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Predictions</title>
+    </head>
+
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        }
+        .slider{
+            width: 500;
+        }
+        .alert {
+        padding: 20px;
+        background-color: #f44336; /* Red */
+        color: white;
+        margin-bottom: 15px;
+        }
+        h1,h2 {
+            color:#f44336;
+            margin:0;
+            padding:4px;
+            font:bold 1.5em verdana;
+            border-bottom:1px solid #000;
+	    }
+    </style>
+
+    <script>
+        function show_alert()
+        {
+            alert("OK to proceed");
+        }
+    </script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <body>
+        <div class="container">
+           <img src="static/images/avatar.jpg">
+           <h2>Adjust sliders to match your favourite character.</h2>
+            <form method="POST" action="{% url 'prompt' %}">
+                {% csrf_token %}
+            <table>
+            <tr><th>Emotion 1 </th><th>Slider Value</th><th>Emotion 2</th></tr>
+            <tr><td>Playful</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg1"></td><td>Serious</td></tr>
+            <tr><td>Shy</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg2"></td><td>Bold</td></tr>
+            <tr><td>Cheerful</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg3"></td><td>Sorrowful</td></tr>
+            <tr><td>Masculine</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg4"></td><td>Feminine</td></tr>
+            <tr><td>Charming</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg5"></td><td>Awkward</td></tr>
+            <tr><td>Lewd</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg6"></td><td>Tasteful</td></tr>
+            <tr><td>Intellectual</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg7"></td><td>Physical</td></tr>
+            <tr><td>Strict</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg8"></td><td>Lenient</td></tr>
+            <tr><td>Refined</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg9"></td><td>Rugged</td></tr>
+            <tr><td>Trusting</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg10"></td><td>Serious</td></tr>
+            <tr><td>Innocent</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg11"></td><td>Worldly</td></tr>
+            <tr><td>Artistic</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg12"></td><td>Scientific</td></tr>
+            <tr><td>Stoic</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg13"></td><td>Expressive</td></tr>
+            <tr><td>Cunning</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg14"></td><td>Honorable</td></tr>
+            <tr><td>Orderly</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg15"></td><td>Chaotic</td></tr>
+            <tr><td>Normal</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg16"></td><td>Weird</td></tr>
+            <tr><td>Competitive</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg17"></td><td>Cooperative</td></tr>
+            <tr><td>Tensed</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg18"></td><td>Relaxed</td></tr>
+            <tr><td>Brave</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg19"></td><td>Careful</td></tr>
+            <tr><td>Spiritual</td><td><input type="range" min="1" max="100" value="50" class="slider" name="rg20"></td><td>Sceptical</td></tr>
+
+            </table>
+            <br>
+            <input type="submit" onclick="show_alert()" class="btn btn-primary" value="Submit to check your character">
+        </form>
+        </div>
+    </body>
+</html>
