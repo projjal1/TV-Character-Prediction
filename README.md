@@ -10,7 +10,7 @@ An interactive character-matching website based on machine-learning and personal
 The dataset contains 800 characters and one will be mapped to one particular match based on the inputs of personality scores.
 
 <h2>Wesite hosted</h2>
-Website is hosted at <a href="https://your-character.herokuapp.com">Link to website</a>
+Website is hosted at <a href="https://your-character.herokuapp.com">Link to website</a>   (Website is currently down)
 
 <h2>Functionality</h2>
 The entire website has been made from Django framework and is hosted on Heroku. <br>
